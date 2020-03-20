@@ -1,2 +1,2 @@
 # coverage
-implementation of algorithm for minimizing a nonsmooth and nonconvex function
+implementation of an algorithm for minimizing a nonsmooth and nonconvex function
