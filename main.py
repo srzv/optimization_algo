@@ -1,3 +1,5 @@
+import math
+import bisect
 from functools import cached_property
 from dataclasses import dataclass, field
 from collections.abc import Callable
@@ -5,8 +7,6 @@ from rich.console import Console
 from scipy.optimize import minimize
 from scipy.optimize import Bounds
 import numpy as np
-import bisect
-import math
 import examples
 
 

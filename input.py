@@ -1,12 +1,12 @@
-import click
-import time
 import math
 import os
+import time
+import click
 from rich.console import Console
 from coverage_plot import Cov_plot
-# from plots import Plots
+from plots import Plots
 import examples
-import main
+from main import Parall_processing
 
 TIME = time.strftime("%d.%m.%y_%H:%M:%S")
 # расположение сохраненных графиков
@@ -27,7 +27,7 @@ def user_input(n, eps, plot, vis3d, half, gamma):
     if half:
         gamma = math.inf
     if n == 1:
-        stats = test.Parall_processing(
+        stats = Parall_processing(
             examples.Example1.f,
             examples.Example1.L,
             eps,
@@ -38,7 +38,7 @@ def user_input(n, eps, plot, vis3d, half, gamma):
         start = examples.Example1.start
         end = examples.Example1.end
     if n == 2:
-        stats = test.Parall_processing(
+        stats = Parall_processing(
             examples.Example2.f,
             examples.Example2.L,
             eps,
@@ -49,7 +49,7 @@ def user_input(n, eps, plot, vis3d, half, gamma):
         start = examples.Example2.start
         end = examples.Example2.end
     if n == 3:
-        stats = test.Parall_processing(
+        stats = Parall_processing(
             examples.Example3.f,
             examples.Example3.L,
             eps,
