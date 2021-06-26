@@ -1,0 +1,6 @@
+*~
+*.html
+*.conf
+*.vscode
+plots/*
+__pycache__/*
