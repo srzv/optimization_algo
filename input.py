@@ -1,5 +1,6 @@
-import math
+"""Модуль взимодействия с пользователем"""
 import os
+import math
 import time
 import click
 from rich.console import Console
@@ -79,9 +80,9 @@ def user_input(n, eps, plot, vis3d, half, gamma):
             os.mkdir(path)
         except OSError as error:
             print(error)
-        # plots = Plots(stats)
-        # plots.Rk_plot()
-        # plots.N_plot()
+        plots = Plots(stats)
+        plots.Rk_plot()
+        plots.N_plot()
     if vis3d:
         coverage = Cov_plot(stats.cov_center, stats.cov_size)
         coverage.scene(start, end)
