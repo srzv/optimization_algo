@@ -4,3 +4,4 @@
 *.vscode
 plots/*
 __pycache__/*
+*.pyc

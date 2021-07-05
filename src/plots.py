@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from dataclasses import dataclass, field
-from main import Stats
-import main
+from src.algo import Stats
 
 
 @dataclass
