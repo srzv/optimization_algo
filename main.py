@@ -74,17 +74,17 @@ class Parall(BaseParall):
 @dataclass
 class Stats:
     n: int = -1
-    R: list[float] = field(default_factory=list)
     fragm2: int = 0
     fragm4: int = 0
     fragm6: int = 0
+    R: list = field(default_factory=list)
     min_n: int = -1
     min_f: float = -1
-    min_x: list[float] = field(default_factory=list)
-    div_2: list[float] = field(default_factory=list)
-    div_6: list[float] = field(default_factory=list)
-    cov_center: list[float] = field(default_factory=list)
-    cov_size: list[float] = field(default_factory=list)
+    min_x: list = field(default_factory=list)
+    div_2: list = field(default_factory=list)
+    div_6: list = field(default_factory=list)
+    cov_center: list = field(default_factory=list)
+    cov_size: list = field(default_factory=list)
 
 
 class Parall_processing:

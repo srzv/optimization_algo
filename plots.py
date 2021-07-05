@@ -6,7 +6,7 @@ import main
 
 @dataclass
 class Plots:
-    stat = Stats()
+    stat: Stats
 
     def Rk_plot(self, path="/", img_size=500):
         """график изменения радиуса шара"""

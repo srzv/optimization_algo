@@ -17,7 +17,7 @@ class Cov_plot:
                 color=color.red,
                 opacity=1,
             )
-            time.sleep(6 / len(self.mas1))
+            time.sleep(6 / len(self.sizes))
 
     def scene(self, start, end):
         side = end - start
@@ -35,5 +35,4 @@ class Cov_plot:
             width=side,
             opacity=0.1,
         )
-        self.draw()
-        # scene.bind("keydown", self.draw)
+        scene.bind("keydown", self.draw)
