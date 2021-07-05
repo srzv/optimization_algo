@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "optimization_algo"
+version = "0.1.0"
+description = "Algorithm for a global optimization"
+authors = ["srzv <you@example.com>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = "3.8.5"
+matplotlib = "^3.4.2"
+vpython = "^7.6.1"
+rich = "^10.5.0"
+click = "^8.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+black = "^21.6b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

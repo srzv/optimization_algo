@@ -4,9 +4,6 @@ from functools import cached_property
 from dataclasses import dataclass, field
 from collections.abc import Callable
 from rich.console import Console
-from scipy.optimize import minimize
-from scipy.optimize import Bounds
-import numpy as np
 
 
 @dataclass
@@ -129,18 +126,6 @@ class Parall_processing:
             delta = delta + h
         return final_result
 
-    def new_R_k(self):
-        bounds = Bounds(np.array([0.1e-10]), np.array([1.0]))
-        x0 = np.array([0.1e-10])
-        res = minimize(
-            self.R1,
-            x0,
-            method="Powell",
-            options={"xtol": 1e-8, "disp": False},
-            bounds=bounds,
-        )
-        return self.R2(res.x[0])
-
     def R1(self, delta):
         return -(self.f_k - self.F_k + self.eps - delta) / self.L(delta)
 
@@ -173,7 +158,7 @@ class Parall_processing:
             and p.c_y + self.r / math.sqrt(3) >= p.y2
             and p.c_z + self.r / math.sqrt(3) >= p.z2
         ):
-            self.stat.cov_size.append([b.a, b.b, b.c])
+            self.stat.cov_size.append([p.a, p.b, p.c])
             self.stat.cov_center.append([p.c_x, p.c_y, p.c_z])
             return 0
         # учитывается вариант, когда текущий параллелепипед вытянутой формы
@@ -183,7 +168,7 @@ class Parall_processing:
             and p.y2 < p.c_y + self.r
             and p.z2 < p.c_z + self.r
         ):
-            self.stat.cov_size.append([b.a, b.b, b.c])
+            self.stat.cov_size.append([p.a, p.b, p.c])
             self.stat.cov_center.append([p.c_x, p.c_y, p.c_z])
             return 0
         # имеется ли воможность вписать куб в шар
